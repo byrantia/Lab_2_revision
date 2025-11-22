@@ -29,6 +29,24 @@ def find_min_max(list):
     y.append(round(max(list)))
     return y
 
+def sort_temperatue(list):
+    x = sorted(list)
+    return x
+
+def calc_median_temperature(list):
+    length = len(list)
+    
+    list = sorted(list)
+    if length%2 == 0:
+        mid = length // 2
+        median = (list[mid]+list[mid-1])/2
+        return median
+    elif length%2 == 1:
+        middle = length//2
+        median = list[middle]
+        return median
+
+
 
 def main():
     print("ET0735 -- (DevOps for AIOT)")
@@ -39,6 +57,10 @@ def main():
     print(avergae)
     min_max = find_min_max(num_list)
     print(min_max)
+    sort = sort_temperatue(num_list)
+    print(sort)
+    median=calc_median_temperature(num_list)
+    print(median)
 
 if __name__ == "__main__":
     main()
